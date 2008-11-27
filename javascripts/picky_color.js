@@ -57,7 +57,7 @@ PickyColor.prototype = {
     this.event('beforeCreate')
 
     new Insertion.Top(document.body, (new Template(this.options.colorPickerHTML)).evaluate({colorPickerClass:this.options.colorPickerClass, titleText:this.options.titleText, closeText:this.options.closeText, imageBase:this.options.imageBase}))
-    this.picker = document.body.down(this.colorPickerClass)
+    this.picker = document.body.down("."+this.options.colorPickerClass)
     this.titleBarElement = $(this.picker).down('.color-picker-title-bar')
     this.titleElement = $(this.picker).down('.color-picker-title')
     this.closerElement = $(this.picker).down('.color-picker-closer')
