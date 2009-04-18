@@ -7,7 +7,7 @@ PickyColor is a Ruby on Rails plugin for the JS color picker based on Prototype/
 Installation
 ============
 
-    ./script/plugin install git://github.com/Astorz/picky-color.git
+    ./script/plugin install git://github.com/sunito/picky-color.git
 
 
 Example usage
