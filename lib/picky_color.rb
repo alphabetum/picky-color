@@ -61,18 +61,18 @@ module PickyColor
     end
 
             
-    def picky_color(object, method, options = {})     
-      obj = options[:object] || instance_variable_get("@#{object}")
+    def picky_color(object_name, method, options = {})     
+      obj = options[:object] || instance_variable_get("@#{object_name}")
       picky_options = picky_color_process_options options
 
 
       # to keep it working with old rails versions:
       begin
-        input = ActionView::Helpers::InstanceTag.new(object, method, self, options.delete(:object))
+        input = ActionView::Helpers::InstanceTag.new(object_name, method, self, options.delete(:object))
       rescue ArgumentError
-        input = ActionView::Helpers::InstanceTag.new(object, method, self, nil, options.delete(:object))
+        input = ActionView::Helpers::InstanceTag.new(object_name, method, self, nil, options.delete(:object))
       end
-      return picky_color_output input.to_input_field_tag("text", options), object, method, nil, picky_options   
+      return picky_color_output input.to_input_field_tag("text", options), object_name, method, nil, picky_options   
     end
 
     private
